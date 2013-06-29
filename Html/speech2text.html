@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="sdk/sencha-touch-all.js">
+        </script>
+        <script>
+                           Ext.Loader.setConfig( {enabled:true} );
+                           Ext.Loader.setPath( {'Att': 'app/lib'} );
+                           this.provider.speechToText( {
+                                   fileName: '{{audio_file}}.wav', 
+                                   streamed: true,
+                                   success: function(response){
+                                           document.write( JSON.stringify(response) );
+                                       },
+                Failure: function(error){
+                        Document.write( JSON.stringify(error) );
+                    }
+                           } );
+                       </script>
+    </head>
+</html>
